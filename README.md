@@ -1,8 +1,8 @@
 # Data-Analysis-Project
 
-# 프로젝트 제목
+# Project Subject
 
-프로젝트에 대한 간단한 소개 또는 설명을 여기에 작성하세요.
+Differences based on Categories, Age, Sex, and Time etc.
 
 ## 목적
 
