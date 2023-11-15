@@ -1,16 +1,27 @@
 # Data-Analysis-Project
 
-# Project Subject
+## 1. Project Subject
 
 Differences based on Categories, Age, Sex, and Time etc.
 
-## 목적
+## 2. Understand Dataset
 
 프로젝트의 주요 목표나 목적을 설명하세요.
 
-## 설치
+## 3. Write Worksheets
+|열1|열2|
+|:---|:---|
+|값ㅁㄴㅇㅁㅁㅁㅁㅁㅁ1|값ㅇㅇㅇㅇㅇㅇㅇㅇ2|
+|값ㅁㄴㅇㅁㅁㅁㅁㅁㅁ1|값ㅇㅇㅇㅇㅇㅇㅇㅇ2|
+|값ㅁㄴㅇㅁㅁㅁㅁㅁㅁ1|값ㅇㅇㅇㅇㅇㅇㅇㅇ2|
+|값ㅁㄴㅇㅁㅁㅁㅁㅁㅁ1|값ㅇㅇㅇㅇㅇㅇㅇㅇ2|
+|값ㅁㄴㅇㅁㅁㅁㅁㅁㅁ1|값ㅇㅇㅇㅇㅇㅇㅇㅇ2|
 
-프로젝트를 로컬 환경에서 실행하기 위한 설치 지침을 제공하세요. 필요한 의존성 및 설치 방법에 대한 정보를 포함하세요.
+## 4. Data Preprocessing
+.
 
-```bash
-npm install
+## 5. Data Visualization
+.
+
+## 6. Conclusion
+.
