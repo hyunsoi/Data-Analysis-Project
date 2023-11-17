@@ -39,7 +39,8 @@ Differences based on Categories, Age, Sex, and Time etc.
  <img width="153" alt="스크린샷 2023-11-16 14 14 17" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/b08453f3-1457-4403-b39b-5c6da8c027c5">
 
 ### Result
- <img width="517" alt="스크린샷 2023-11-16 14 24 01" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/da77bc6c-5421-4f84-a168-0c7638867a19">
+ <img width="502" alt="스크린샷 2023-11-17 10 07 40" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/4365b88e-f1b3-4bfa-b719-de8a7685d6c0">
+
 
 
 ## 5. Data Visualization
