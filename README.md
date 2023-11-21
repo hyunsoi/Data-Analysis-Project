@@ -2,7 +2,7 @@
 
 ## 1. Project Subject
 
-Shopping Category Differences based on Age, Sex, and DATE.
+Shopping Category Differences based on Age, Sex,  Date and Time.
 
 ## 2. Understand Dataset
 ``` python
