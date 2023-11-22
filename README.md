@@ -15,23 +15,28 @@ df.info()
 ## 3. Write Worksheets
 |No|Question|
 |:---:|:---:|
-|1 | 성별에 따른 카드 사용량 상관관계|
-|2 | 성별에 따른 카테고리의 상관관계|
-|3 | 평일과 휴일의 건수 상관관계|
-|4 | 성별에 따른 쇼핑 시간대의 상관관계|
-|5 | 연령대에 따른 쇼핑 카테고리 상관관계|
-|6 | 코로나 이전과 이후의 쇼핑 카테고리의 변화 |
+|1 | 성별과 연령대에 따른 카드 사용량의 관계|
+|2 | 성별과 연령대에 따른 쇼핑 시간대의 관계|
+|3 | 성별과 연령대에 따른 쇼핑 카테고리별 카드 사용량의 관계|
+|4 | 평일과 휴일의 건수 상관관계|
+
 
 ## 4. Data Preprocessing
 
 ### Renaming Variation
 ```python
 df = df.rename(
-    columns = {'CRI_YM' : '연월',
-               'TAG' : '카테고리'})
+    columns = {'CRI_YM' : 'year',
+               'TAG' : 'category',
+               '건수합계' : '카드 사용량'})
 ```
-- CRI_YM → 연월
-- TAG → 카테고리
+- CRI_YM → year
+- TAG → category
+- 건수합계 → 카드 사용량
+- 평일휴일 → 그대로
+- 요일 → 그대로
+- 시간대 → 그대로
+- 성별 → 그대로
 
 ### Preprocessing
 ```python
@@ -113,6 +118,9 @@ plt.show()
 <img width="200" alt="스크린샷 2023-11-22 17 07 47" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f7af4e90-6da0-4e1d-89ea-f851700d3d9d">
 <img width="200" alt="스크린샷 2023-11-22 17 08 04" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f5f960ff-2d49-4bd4-994a-2b4311123336">
 <img width="390" alt="스크린샷 2023-11-22 17 17 29" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/28efb2af-f178-498b-935c-94da66bafe95">
+
+### 셩별과 연령대에 따른 쇼핑 시간대의 관계
+
 
 
 ### 성별과 연령대에 따른 카테고리의 상관관계
