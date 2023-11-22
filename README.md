@@ -88,26 +88,34 @@ df['카테고리'].drop_duplicates().reset_index(drop=True)
 
 ## 5. Data Visualization
 
-### 성별에 따른 카드 사용량의 상관관계
+### 성별과 연령대에 따른 카드 사용량의 상관관계
 ```python
-df.groupby('성별') \
-    .agg(sum_건수합계 = ('건수합계', 'sum')) #총 건수합계
+df2.groupby(['성별','연령대']) \
+    .agg(mean_카드사용량 = ('카드 사용량', 'count'))
 
-df.groupby('성별') \
-    .agg(mean_건수합계 = ('건수합계', 'mean')) #평균 건수합계
+df2.query("성별 == 'Male'") \
+    .groupby(['성별','연령대']) \
+    .agg(mean_카드사용량 = ('카드 사용량', 'count')) \
+    .sort_values('mean_카드사용량', ascending = False)
 
-df.groupby('성별') \
-    .agg(max_건수합계 = ('건수합계', 'max')) #최대 건수합계
+df2.query("성별 == 'Female'") \
+    .groupby(['성별','연령대']) \
+    .agg(mean_카드사용량 = ('카드 사용량', 'count')) \
+    .sort_values('mean_카드사용량', ascending = False)
 
-df.groupby('성별') \
-    .agg(min_건수합계 = ('건수합계', 'min')) #최소 건수합계
+sns.set(style="white", palette="Set2")
+plt.rcParams['font.family'] = 'AppleGothic'
+plt.figure(figsize=(10, 6))
+sns.barplot(data = df2, x = '연령대', y = '카드 사용량') 
+plt.show()
 ```
-<img width="124" alt="스크린샷 2023-11-20 16 49 30" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9c834b01-0cc5-4d75-88ff-43c39a273e79">
-<img width="124" alt="스크린샷 2023-11-20 16 50 39" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/ff1cf2e3-367f-456d-a519-24ec12757380">
-<img width="124" alt="스크린샷 2023-11-20 16 59 02" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/2fcffa21-3fe3-4241-9260-44221aafd185">
-<img width="124" alt="스크린샷 2023-11-20 16 59 11" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/0e9c2dea-70e9-469d-8297-6ecddea3e53e">
+<img width="200" alt="스크린샷 2023-11-22 17 06 58" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/96161937-5734-4aa7-a63f-add8894a8d52">
+<img width="200" alt="스크린샷 2023-11-22 17 07 47" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f7af4e90-6da0-4e1d-89ea-f851700d3d9d">
+<img width="200" alt="스크린샷 2023-11-22 17 08 04" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f5f960ff-2d49-4bd4-994a-2b4311123336">
+<img width="390" alt="스크린샷 2023-11-22 17 17 29" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/28efb2af-f178-498b-935c-94da66bafe95">
 
-### 성별에 따른 카테고리의 상관관계
+
+### 성별과 연령대에 따른 카테고리의 상관관계
 ``` python
 # 성별과 카테고리 간의 교차표 생성
 cross_tab = pd.crosstab(df['성별'], df['카테고리'])
