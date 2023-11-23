@@ -1,4 +1,4 @@
-# Data-Analysis-Project
+![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/8147dc27-66a1-4c2b-97ad-8ca0d4f52cf5)# Data-Analysis-Project
 
 ## 1. Project Subject
 
@@ -73,16 +73,14 @@ df['평균 쇼핑 시간대'] = np.where(df['시간대'] == 'A.02-06시', 4,
 
 ### Check Category Type
 ```python
-df[{'카테고리'}].drop_duplicates().reset_index(drop=True).T
 df['카테고리'].drop_duplicates().reset_index(drop=True)
 ```
-<img width="793" alt="스크린샷 2023-11-20 17 13 27" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/e4051226-3b59-4c84-8478-95f62a238d79">
 <img width="236" alt="스크린샷 2023-11-20 17 17 31" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/48384e2c-e221-45f1-a0c7-ba14dc857b3d">
 
 
 ### Missing Value Check
 ```python
-df['카테고리'].drop_duplicates().reset_index(drop=True)
+df.isna().sum()
 ```
  <img width="153" alt="스크린샷 2023-11-16 14 14 17" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/b08453f3-1457-4403-b39b-5c6da8c027c5">
 
@@ -123,19 +121,10 @@ plt.show()
 
 
 
-### 성별과 연령대에 따른 카테고리의 상관관계
-``` python
-# 성별과 카테고리 간의 교차표 생성
-cross_tab = pd.crosstab(df['성별'], df['카테고리'])
+### 3. 성별과 연령대에 따른 카테고리별 카드 사용량의 관계
+![asdf](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9bcb12bc-2d32-498e-8cc6-f857b505a037)
 
 
-# 세로로 출력
-print(cross_tab.stack())
-```
-<img width="236" alt="스크린샷 2023-11-20 17 39 31" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/6166a33a-ed22-4118-ac66-88bafec4bae4">
-
-##### 데이터를 수집할 때 남녀별로 카테고리를 동일한 크기로 가져온 것처럼 보여짐. 
-##### 따라서 이 데이터 파일에서는 단순히 성별에 따른 카테고리의 상관관계를 분석하기 어려움.
 
 ## 6. Conclusion
 .
