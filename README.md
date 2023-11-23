@@ -1,4 +1,4 @@
-![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/8147dc27-66a1-4c2b-97ad-8ca0d4f52cf5)# Data-Analysis-Project
+# Data-Analysis-Project
 
 ## 1. Project Subject
 
@@ -122,7 +122,6 @@ plt.show()
 
 
 ### 3. 성별과 연령대에 따른 카테고리별 카드 사용량의 관계
-![asdf](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9bcb12bc-2d32-498e-8cc6-f857b505a037)
 
 
 
