@@ -185,8 +185,15 @@ df_combined = pd.concat([df4_M_20, df4_M_30, df4_M_40, df4_M_50], axis=1)
 df_combined
 ```
 ![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/7b12333a-f177-45b3-af4c-8c81be10b4b3)
-<img src ="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/a2dee7eb-630f-44d6-bafd-1b5f43168101">
-<img src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/8b6f93de-f028-4ed3-ac59-ccd821fa049c">
+<div>
+ <h4> 연령대별 남자 카테고리별 카드 사용량 </h5>
+ <img src ="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/a2dee7eb-630f-44d6-bafd-1b5f43168101">
+</div>
+<div>
+ <h4"> 연령대별 여자 카테고리별 카드 사용량</h5>
+ <img src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/8b6f93de-f028-4ed3-ac59-ccd821fa049c">
+</div>
+
 
 
 
