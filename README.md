@@ -91,37 +91,103 @@ df.isna().sum()
 
 ## 5. Data Visualization
 
-### 성별과 연령대에 따른 카드 사용량의 상관관계
+### 1. 성별과 연령대에 따른 카드 사용량의 상관관계
 ```python
-df2.groupby(['성별','연령대']) \
-    .agg(mean_카드사용량 = ('카드 사용량', 'count'))
+df2_A = df2.groupby(['성별','연령대']) \
+        .agg(평균_카드사용량 = ('카드 사용량', 'mean'))
 
-df2.query("성별 == 'Male'") \
-    .groupby(['성별','연령대']) \
-    .agg(mean_카드사용량 = ('카드 사용량', 'count')) \
-    .sort_values('mean_카드사용량', ascending = False)
+df2_A
+```
+<img width="190" height = "370" alt="스크린샷 2023-11-29 19 33 48" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/6c3d4b87-6c02-4380-b7af-ef2476e7f5c9">
+.
+<img width="585" height = "370" alt="스크린샷 2023-11-29 19 34 26" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/209594a8-d0bc-4151-878e-a72f495e31a2">
+<img width="500" height = "370 alt="스크린샷 2023-11-29 20 03 13" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/49443825-a6b1-433f-9dd2-2190ebb3a69a">
+<img width="500" height = "370 alt="스크린샷 2023-11-29 20 03 28" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9b6e1641-19dc-4444-9e2d-1b1104f66917">
 
-df2.query("성별 == 'Female'") \
-    .groupby(['성별','연령대']) \
-    .agg(mean_카드사용량 = ('카드 사용량', 'count')) \
-    .sort_values('mean_카드사용량', ascending = False)
 
-sns.set(style="white", palette="Set2")
-plt.rcParams['font.family'] = 'AppleGothic'
-plt.figure(figsize=(10, 6))
-sns.barplot(data = df2, x = '연령대', y = '카드 사용량') 
+
+### 2. 성별과 연령대에 따른 쇼핑 시간대의 상관관계
+```python
+# 남자 데이터에 대한 그래프
+
+
+plt.figure(figsize=(9, 7))  # 전체 그림 크기 설정
+
+# subplot 1 (위쪽)
+plt.subplot(2, 2, 1)
+plt.title('20대')
+
+plt.ylim(0, 3000)
+sns.lineplot(data = df3_20, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
+
+# 여자 데이터에 대한 그래프
+#max_value_row_F = df4_F.loc[df4_F['여자_평균_카드사용량'].idxmax()]
+
+# subplot 2 (아래쪽)
+plt.subplot(2, 2, 2)
+plt.title('30대')
+
+plt.ylim(0, 3000)
+sns.lineplot(data = df3_30, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
+
+# subplot 1 (위쪽)
+plt.subplot(2, 2, 3)
+plt.title('40대')
+
+plt.ylim(0, 3000)
+sns.lineplot(data = df3_40, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
+
+# 여자 데이터에 대한 그래프
+#max_value_row_F = df4_F.loc[df4_F['여자_평균_카드사용량'].idxmax()]
+
+# subplot 2 (아래쪽)
+plt.subplot(2, 2, 4)
+plt.title('50대')
+
+plt.ylim(0, 3000)
+sns.lineplot(data = df3_50, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
+
+plt.tight_layout()
 plt.show()
 ```
-<img width="200" alt="스크린샷 2023-11-22 17 06 58" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/96161937-5734-4aa7-a63f-add8894a8d52">
-<img width="200" alt="스크린샷 2023-11-22 17 07 47" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f7af4e90-6da0-4e1d-89ea-f851700d3d9d">
-<img width="200" alt="스크린샷 2023-11-22 17 08 04" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f5f960ff-2d49-4bd4-994a-2b4311123336">
-<img width="390" alt="스크린샷 2023-11-22 17 17 29" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/28efb2af-f178-498b-935c-94da66bafe95">
+![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f9468b01-7e74-44c8-a75b-dcaeb930ac6d)
 
-### 셩별과 연령대에 따른 쇼핑 시간대의 관계
+```python
+plt.figure(figsize=(10, 4))  # 전체 그림 크기 설정
 
+# subplot 1 (위쪽)
+plt.subplot(1, 2, 1)
+plt.title('남자 평균 쇼핑 시간대')
 
+sns.lineplot(data = df3_M, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '연령대', ci = None, palette = 'muted')
+
+# 여자 데이터에 대한 그래프
+#max_value_row_F = df4_F.loc[df4_F['여자_평균_카드사용량'].idxmax()]
+
+# subplot 2 (아래쪽)
+plt.subplot(1, 2, 2)
+plt.title('여자 평균 쇼핑 시간대')
+
+sns.lineplot(data=df3_F, x='평균 쇼핑 시간대', y='카드 사용량', hue='연령대', ci=None, palette = 'muted')
+```
+
+<img width="863" alt="스크린샷 2023-11-29 20 28 00" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/b637c6cf-45e5-4b89-8f1d-eb8b8fc5f346">
 
 ### 3. 성별과 연령대에 따른 카테고리별 카드 사용량의 관계
+```python
+ #df4_M_20 = 20대 남성
+ #df4_M_30 = 30대 남성
+ #df4_M_40 = 40대 남성
+ #df4_M_50 = 50대 남성
+
+df_combined = pd.concat([df4_M_20, df4_M_30, df4_M_40, df4_M_50], axis=1)
+
+df_combined
+```
+![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/7b12333a-f177-45b3-af4c-8c81be10b4b3)
+<img src ="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/a2dee7eb-630f-44d6-bafd-1b5f43168101">
+<img src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/8b6f93de-f028-4ed3-ac59-ccd821fa049c">
+
 
 
 
