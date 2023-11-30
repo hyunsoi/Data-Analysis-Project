@@ -101,8 +101,8 @@ df2_A
 <img width="190" height = "370" alt="스크린샷 2023-11-29 19 33 48" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/6c3d4b87-6c02-4380-b7af-ef2476e7f5c9">
 .
 <img width="585" height = "370" alt="스크린샷 2023-11-29 19 34 26" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/209594a8-d0bc-4151-878e-a72f495e31a2">
-<img width="500" height = "370 alt="스크린샷 2023-11-29 20 03 13" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/49443825-a6b1-433f-9dd2-2190ebb3a69a">
-<img width="500" height = "370 alt="스크린샷 2023-11-29 20 03 28" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9b6e1641-19dc-4444-9e2d-1b1104f66917">
+<img width="450" height = "370 alt="스크린샷 2023-11-29 20 03 13" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/49443825-a6b1-433f-9dd2-2190ebb3a69a">
+<img width="450" height = "370 alt="스크린샷 2023-11-29 20 03 28" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9b6e1641-19dc-4444-9e2d-1b1104f66917">
 
 
 
