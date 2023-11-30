@@ -101,8 +101,8 @@ df2_A
 <img width="190" height = "370" alt="스크린샷 2023-11-29 19 33 48" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/6c3d4b87-6c02-4380-b7af-ef2476e7f5c9">
 .
 <img width="585" height = "370" alt="스크린샷 2023-11-29 19 34 26" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/209594a8-d0bc-4151-878e-a72f495e31a2">
-<img width="450" height = "370 alt="스크린샷 2023-11-29 20 03 13" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/49443825-a6b1-433f-9dd2-2190ebb3a69a">
-<img width="450" height = "370 alt="스크린샷 2023-11-29 20 03 28" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/9b6e1641-19dc-4444-9e2d-1b1104f66917">
+<img width="962" alt="스크린샷 2023-11-30 13 57 31" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/81ef54df-9ab7-446d-ab1b-7a18685a945a">
+
 
 
 
@@ -118,37 +118,28 @@ plt.subplot(2, 2, 1)
 plt.title('20대')
 
 plt.ylim(0, 3000)
-sns.lineplot(data = df3_20, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
-
-# 여자 데이터에 대한 그래프
-#max_value_row_F = df4_F.loc[df4_F['여자_평균_카드사용량'].idxmax()]
+sns.lineplot(data = df3_20, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', palette = 'Set1')
 
 # subplot 2 (아래쪽)
 plt.subplot(2, 2, 2)
 plt.title('30대')
 
 plt.ylim(0, 3000)
-sns.lineplot(data = df3_30, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
+sns.lineplot(data = df3_30, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', palette = 'Set1')
 
 # subplot 1 (위쪽)
 plt.subplot(2, 2, 3)
 plt.title('40대')
 
 plt.ylim(0, 3000)
-sns.lineplot(data = df3_40, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
-
-# 여자 데이터에 대한 그래프
-#max_value_row_F = df4_F.loc[df4_F['여자_평균_카드사용량'].idxmax()]
+sns.lineplot(data = df3_40, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', palette = 'Set1')
 
 # subplot 2 (아래쪽)
 plt.subplot(2, 2, 4)
 plt.title('50대')
 
 plt.ylim(0, 3000)
-sns.lineplot(data = df3_50, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', ci =None, palette = 'Set1')
-
-plt.tight_layout()
-plt.show()
+sns.lineplot(data = df3_50, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '성별', palette = 'Set1')
 ```
 ![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/f9468b01-7e74-44c8-a75b-dcaeb930ac6d)
 
@@ -158,7 +149,7 @@ plt.figure(figsize=(10, 4))  # 전체 그림 크기 설정
 # subplot 1 (위쪽)
 plt.subplot(1, 2, 1)
 plt.title('남자 평균 쇼핑 시간대')
-
+plt.ylim(0, 3000)
 sns.lineplot(data = df3_M, x = '평균 쇼핑 시간대', y = '카드 사용량', hue = '연령대', ci = None, palette = 'muted')
 
 # 여자 데이터에 대한 그래프
@@ -167,11 +158,12 @@ sns.lineplot(data = df3_M, x = '평균 쇼핑 시간대', y = '카드 사용량'
 # subplot 2 (아래쪽)
 plt.subplot(1, 2, 2)
 plt.title('여자 평균 쇼핑 시간대')
-
+plt.ylim(0, 3000)
 sns.lineplot(data=df3_F, x='평균 쇼핑 시간대', y='카드 사용량', hue='연령대', ci=None, palette = 'muted')
 ```
 
-<img width="863" alt="스크린샷 2023-11-29 20 28 00" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/b637c6cf-45e5-4b89-8f1d-eb8b8fc5f346">
+<img width="900" alt="스크린샷 2023-11-30 16 23 19" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/981316a8-48f5-4ff6-a781-f94d6feb470f">
+<br>
 
 ### 3. 성별과 연령대에 따른 카테고리별 카드 사용량의 관계
 ```python
@@ -183,15 +175,32 @@ sns.lineplot(data=df3_F, x='평균 쇼핑 시간대', y='카드 사용량', hue=
 df_combined = pd.concat([df4_M_20, df4_M_30, df4_M_40, df4_M_50], axis=1)
 
 df_combined
+
 ```
-![image](https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/7b12333a-f177-45b3-af4c-8c81be10b4b3)
+<h3>20 ~ 50 대 남자 쇼핑 카테고리별 카드 사용량</h3>
+<img width ="900" src ="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/7b12333a-f177-45b3-af4c-8c81be10b4b3">
+
+<h3>20 ~ 50 대 여자 쇼핑 카테고리별 카드 사용량</h3>
+<img width="900" alt="스크린샷 2023-11-30 16 41 26" src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/6930fe0e-0860-4f13-b253-077d78f63204">
+
+
 <div>
- <h4> 연령대별 남자 카테고리별 카드 사용량 </h5>
- <img src ="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/a2dee7eb-630f-44d6-bafd-1b5f43168101">
-</div>
-<div>
- <h4"> 연령대별 여자 카테고리별 카드 사용량</h5>
- <img src="https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/8b6f93de-f028-4ed3-ac59-ccd821fa049c">
+ 
+ 
+ ## 연령대별 남자 vs 여자 카테고리별 카드 사용량
+ 
+ ### 20대 
+ <img width = "900" src = "https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/40b75d3f-742e-45fe-a4d2-aeaa49c7e2b5">
+
+ ### 30대
+ <img width ="900" src = "https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/72bd40db-0fe0-4692-a1e3-07cf181bc9c4" >
+
+ ### 40대
+ <img width = "900" src = "https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/254aa9ef-edce-4ed3-ae90-be3b5d1ab07f">
+
+ ### 50대
+ <img width = "900" src= "https://github.com/hyunsoi/Data-Analysis-Project/assets/102220333/cd4137e2-2eaf-4557-9ca4-8cb9e5264f02">
+
 </div>
 
 
